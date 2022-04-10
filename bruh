@@ -1,0 +1,844 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Message = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local Items = Instance.new("TextButton")
+local BankCollect = Instance.new("TextButton")
+local Message2 = Instance.new("TextLabel")
+local BossNotify = Instance.new("TextButton")
+local Message3 = Instance.new("TextLabel")
+local AutoTrash = Instance.new("TextButton")
+local Message4 = Instance.new("TextLabel")
+local AntiAFK = Instance.new("TextButton")
+local Message5 = Instance.new("TextLabel")
+local Admin = Instance.new("TextButton")
+local openmain = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+main.BackgroundTransparency = 0.200
+main.BorderColor3 = Color3.fromRGB(255, 170, 0)
+main.BorderSizePixel = 4
+main.Position = UDim2.new(0.0253485534, 0, 0.150110379, 0)
+main.Size = UDim2.new(0, 668, 0, 352)
+main.Visible = false
+main.Draggable = true
+main.Active = true
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundColor3 = Color3.fromRGB(118, 78, 0)
+Title.BackgroundTransparency = 0.300
+Title.Size = UDim2.new(0, 667, 0, 34)
+Title.Font = Enum.Font.Highway
+Title.Text = "ABDAU Auto Farm [V3]"
+Title.TextColor3 = Color3.fromRGB(136, 91, 0)
+Title.TextSize = 34.000
+Title.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Title.TextStrokeTransparency = 0.000
+
+Message.Name = "Message"
+Message.Parent = main
+Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message.BackgroundTransparency = 1.000
+Message.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Message.BorderSizePixel = 5
+Message.Position = UDim2.new(0.0273176245, 0, 0.215549886, 0)
+Message.Size = UDim2.new(0, 86, 0, 22)
+Message.Font = Enum.Font.SourceSans
+Message.Text = "Items Farm"
+Message.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message.TextSize = 22.000
+Message.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Message.TextStrokeTransparency = 0.500
+Message.TextWrapped = true
+
+close.Name = "close"
+close.Parent = main
+close.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+close.Position = UDim2.new(0.971153855, 0, -0.0571428537, 0)
+close.Size = UDim2.new(0, 24, 0, 17)
+close.Font = Enum.Font.Sarpanch
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextSize = 30.000
+close.TextWrapped = true
+close.MouseButton1Down:connect(function()
+	main.Visible = false
+	openmain.Visible = true
+end)
+
+Items.Name = "Items"
+Items.Parent = main
+Items.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Items.BackgroundTransparency = 0.200
+Items.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Items.BorderSizePixel = 3
+Items.Position = UDim2.new(0.0592194386, 0, 0.126356393, 0)
+Items.Size = UDim2.new(0, 44, 0, 32)
+Items.Font = Enum.Font.JosefinSans
+Items.Text = "Off / On"
+Items.TextColor3 = Color3.fromRGB(0, 0, 0)
+Items.TextSize = 10.000
+Items.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Items.TextStrokeTransparency = 0.000
+Items.TextWrapped = true
+
+BankCollect.Name = "BankCollect"
+BankCollect.Parent = main
+BankCollect.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+BankCollect.BackgroundTransparency = 0.200
+BankCollect.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BankCollect.BorderSizePixel = 3
+BankCollect.Position = UDim2.new(0.27179426, 0, 0.126356408, 0)
+BankCollect.Size = UDim2.new(0, 44, 0, 32)
+BankCollect.Font = Enum.Font.JosefinSans
+BankCollect.Text = "Off / On"
+BankCollect.TextColor3 = Color3.fromRGB(0, 0, 0)
+BankCollect.TextSize = 10.000
+BankCollect.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+BankCollect.TextStrokeTransparency = 0.000
+BankCollect.TextWrapped = true
+
+Message2.Name = "Message2"
+Message2.Parent = main
+Message2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message2.BackgroundTransparency = 1.000
+Message2.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Message2.BorderSizePixel = 5
+Message2.Position = UDim2.new(0.199473307, 0, 0.215549856, 0)
+Message2.Size = UDim2.new(0, 141, 0, 22)
+Message2.Font = Enum.Font.SourceSans
+Message2.Text = "Auto Collect Bank"
+Message2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message2.TextSize = 22.000
+Message2.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Message2.TextStrokeTransparency = 0.500
+Message2.TextWrapped = true
+
+BossNotify.Name = "BossNotify"
+BossNotify.Parent = main
+BossNotify.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+BossNotify.BackgroundTransparency = 0.200
+BossNotify.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BossNotify.BorderSizePixel = 3
+BossNotify.Position = UDim2.new(0.490357131, 0, 0.126356408, 0)
+BossNotify.Size = UDim2.new(0, 44, 0, 32)
+BossNotify.Font = Enum.Font.JosefinSans
+BossNotify.Text = "Off / On"
+BossNotify.TextColor3 = Color3.fromRGB(0, 0, 0)
+BossNotify.TextSize = 10.000
+BossNotify.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+BossNotify.TextStrokeTransparency = 0.000
+BossNotify.TextWrapped = true
+
+Message3.Name = "Message3"
+Message3.Parent = main
+Message3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message3.BackgroundTransparency = 1.000
+Message3.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Message3.BorderSizePixel = 5
+Message3.Position = UDim2.new(0.416539192, 0, 0.215549856, 0)
+Message3.Size = UDim2.new(0, 141, 0, 22)
+Message3.Font = Enum.Font.SourceSans
+Message3.Text = "Boss Notify"
+Message3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message3.TextSize = 22.000
+Message3.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Message3.TextStrokeTransparency = 0.500
+Message3.TextWrapped = true
+
+AutoTrash.Name = "AutoTrash"
+AutoTrash.Parent = main
+AutoTrash.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoTrash.BackgroundTransparency = 0.200
+AutoTrash.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoTrash.BorderSizePixel = 3
+AutoTrash.Position = UDim2.new(0.689458907, 0, 0.126356408, 0)
+AutoTrash.Size = UDim2.new(0, 44, 0, 32)
+AutoTrash.Font = Enum.Font.JosefinSans
+AutoTrash.Text = "Off / On"
+AutoTrash.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoTrash.TextSize = 10.000
+AutoTrash.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+AutoTrash.TextStrokeTransparency = 0.000
+AutoTrash.TextWrapped = true
+
+Message4.Name = "Message4"
+Message4.Parent = main
+Message4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message4.BackgroundTransparency = 1.000
+Message4.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Message4.BorderSizePixel = 5
+Message4.Position = UDim2.new(0.615640998, 0, 0.255322635, 0)
+Message4.Size = UDim2.new(0, 141, 0, 15)
+Message4.Font = Enum.Font.SourceSans
+Message4.Text = "Auto Trash Arrows & Rokas"
+Message4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message4.TextSize = 22.000
+Message4.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Message4.TextStrokeTransparency = 0.500
+Message4.TextWrapped = true
+
+AntiAFK.Name = "AntiAFK"
+AntiAFK.Parent = main
+AntiAFK.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AntiAFK.BackgroundTransparency = 0.200
+AntiAFK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AntiAFK.BorderSizePixel = 3
+AntiAFK.Position = UDim2.new(0.869099617, 0, 0.126356408, 0)
+AntiAFK.Size = UDim2.new(0, 44, 0, 32)
+AntiAFK.Font = Enum.Font.JosefinSans
+AntiAFK.Text = "Off / On"
+AntiAFK.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiAFK.TextSize = 10.000
+AntiAFK.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+AntiAFK.TextStrokeTransparency = 0.000
+AntiAFK.TextWrapped = true
+
+Message5.Name = "Message5"
+Message5.Parent = main
+Message5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message5.BackgroundTransparency = 1.000
+Message5.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Message5.BorderSizePixel = 5
+Message5.Position = UDim2.new(0.814742804, 0, 0.232595354, 0)
+Message5.Size = UDim2.new(0, 128, 0, 15)
+Message5.Font = Enum.Font.SourceSans
+Message5.Text = "Anti AFK kick"
+Message5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message5.TextSize = 22.000
+Message5.TextStrokeColor3 = Color3.fromRGB(255, 170, 0)
+Message5.TextStrokeTransparency = 0.500
+Message5.TextWrapped = true
+
+Admin.Name = "Admin"
+Admin.Parent = main
+Admin.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Admin.BackgroundTransparency = 0.200
+Admin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Admin.BorderSizePixel = 3
+Admin.Position = UDim2.new(0.0352673084, 0, 0.404765487, 0)
+Admin.Size = UDim2.new(0, 80, 0, 32)
+Admin.Font = Enum.Font.JosefinSans
+Admin.Text = "Fe Admin"
+Admin.TextColor3 = Color3.fromRGB(0, 0, 0)
+Admin.TextSize = 17.000
+Admin.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Admin.TextStrokeTransparency = 0.000
+Admin.TextWrapped = true
+Admin.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/vbeE3Vz2",true))()
+end)
+
+openmain.Name = "openmain"
+openmain.Parent = ScreenGui
+openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+openmain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+openmain.BorderSizePixel = 3
+openmain.Position = UDim2.new(0.921915233, 0, 0.29801324, 0)
+openmain.Size = UDim2.new(0, 61, 0, 22)
+
+TextButton.Parent = openmain
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderSizePixel = 2
+TextButton.Size = UDim2.new(0, 69, 0, 23)
+TextButton.Font = Enum.Font.Ubuntu
+TextButton.Text = "Hub"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+-- Scripts:
+
+local function QRTOGS_fake_script() -- Items.LocalScript 
+	local script = Instance.new('LocalScript', Items)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			script.Parent.Text = ("OFF")
+		end
+	
+		if toggle == true then
+			_G.Items = true --false to turn off and true to turn on
+			while _G.Items do
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2360.97705, 372.235657, -269.131104, 0.999242425, 6.13641475e-08, -0.0389169157, -6.45084555e-08, 1, -7.95396744e-08, 0.0389169157, 8.19898887e-08, 0.999242425)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2448.62231, 372.235657, -333.37619, 0.00725138094, -8.01963509e-08, -0.999973714, 2.92938518e-09, 1, -8.0177216e-08, 0.999973714, -2.34791253e-09, 0.00725138094)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2510.75146, 372.235657, -228.219131, 0.0318050571, -7.60959864e-08, -0.999494076, -2.2631923e-08, 1, -7.68546755e-08, 0.999494076, 2.50648409e-08, 0.0318050571)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2519.44995, 372.235657, -259.940796, 0.95332253, 5.24932773e-08, -0.301953942, -5.97172729e-08, 1, -1.4692791e-08, 0.301953942, 3.20388338e-08, 0.95332253)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2498.28955, 372.235657, -300.562531, 0.96378684, 1.32428402e-10, 0.266673803, 1.05267872e-09, 1, -4.30108349e-09, -0.266673803, 4.4260493e-09, 0.96378684)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2510.0979, 372.235657, -374.141846, 0.0546259843, 1.58914037e-08, 0.998506904, 4.58671856e-09, 1, -1.6166096e-08, -0.998506904, 5.46295897e-09, 0.0546259843)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2437.59741, 372.235657, -373.650452, 0.886342108, -2.48233096e-08, 0.463030905, 1.06645626e-08, 1, 3.31961836e-08, -0.463030905, -2.44851535e-08, 0.886342108)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2468.64868, 372.235657, -400.293488, 0.99998796, -2.03678656e-08, 0.00491109677, 2.02493773e-08, 1, 2.41760851e-08, -0.00491109677, -2.40763463e-08, 0.99998796)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2426.49365, 372.235657, -537.770325, 0.999891877, 7.73974129e-09, 0.0147061981, -7.54072538e-09, 1, -1.35882301e-08, -0.0147061981, 1.34758649e-08, 0.999891877)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2519.23633, 372.235657, -600.220947, 0.0387846716, 2.82807946e-08, -0.999247611, -1.7035763e-08, 1, 2.76408656e-08, 0.999247611, 1.59509028e-08, 0.0387846716)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2194.47485, 372.235657, -533.969971, -0.0198965427, -8.90041374e-09, 0.999802053, -2.676801e-08, 1, 8.36948022e-09, -0.999802053, -2.65961884e-08, -0.0198965427)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2120.90503, 372.235657, -494.024109, 0.0267464966, -1.91073717e-08, 0.999642253, 1.25112249e-08, 1, 1.8779458e-08, -0.999642253, 1.2004465e-08, 0.0267464966)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2176.09839, 372.235657, -565.846863, 0.994249225, 7.32487138e-08, 0.107091144, -6.65539019e-08, 1, -6.60890009e-08, -0.107091144, 5.85816053e-08, 0.994249225)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2272.59351, 372.235657, -424.183472, 0.0825703517, 2.32120279e-08, -0.99658525, 7.66701405e-08, 1, 2.96439353e-08, 0.99658525, -7.88560399e-08, 0.0825703517)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2234.90015, 372.235657, -338.384277, 0.99559027, 6.38064535e-08, -0.0938086808, -6.06150934e-08, 1, 3.68692916e-08, 0.0938086808, -3.10204875e-08, 0.99559027)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2021.12122, 372.235657, -245.737213, -0.29797703, 5.2269602e-08, -0.954573035, -4.92746288e-08, 1, 7.01384835e-08, 0.954573035, 6.79358862e-08, -0.29797703)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2047.91858, 372.235657, -388.797974, 0.00476136804, -2.37848781e-08, 0.999988675, 7.87922971e-08, 1, 2.34099851e-08, -0.999988675, 7.8679939e-08, 0.00476136804)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2317.51367, 372.235657, -327.79187, -0.945492208, 3.78651102e-08, -0.325644761, 5.85270037e-08, 1, -5.3652677e-08, 0.325644761, -6.97871982e-08, -0.945492208)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(5)
+				pl.CFrame = location
+			end
+	
+		end
+		if toggle == false then 
+			_G.Items = false --false to turn off and true to turn on
+			while _G.Items do
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2360.97705, 372.235657, -269.131104, 0.999242425, 6.13641475e-08, -0.0389169157, -6.45084555e-08, 1, -7.95396744e-08, 0.0389169157, 8.19898887e-08, 0.999242425)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2448.62231, 372.235657, -333.37619, 0.00725138094, -8.01963509e-08, -0.999973714, 2.92938518e-09, 1, -8.0177216e-08, 0.999973714, -2.34791253e-09, 0.00725138094)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2510.75146, 372.235657, -228.219131, 0.0318050571, -7.60959864e-08, -0.999494076, -2.2631923e-08, 1, -7.68546755e-08, 0.999494076, 2.50648409e-08, 0.0318050571)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2519.44995, 372.235657, -259.940796, 0.95332253, 5.24932773e-08, -0.301953942, -5.97172729e-08, 1, -1.4692791e-08, 0.301953942, 3.20388338e-08, 0.95332253)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2498.28955, 372.235657, -300.562531, 0.96378684, 1.32428402e-10, 0.266673803, 1.05267872e-09, 1, -4.30108349e-09, -0.266673803, 4.4260493e-09, 0.96378684)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2510.0979, 372.235657, -374.141846, 0.0546259843, 1.58914037e-08, 0.998506904, 4.58671856e-09, 1, -1.6166096e-08, -0.998506904, 5.46295897e-09, 0.0546259843)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2437.59741, 372.235657, -373.650452, 0.886342108, -2.48233096e-08, 0.463030905, 1.06645626e-08, 1, 3.31961836e-08, -0.463030905, -2.44851535e-08, 0.886342108)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2468.64868, 372.235657, -400.293488, 0.99998796, -2.03678656e-08, 0.00491109677, 2.02493773e-08, 1, 2.41760851e-08, -0.00491109677, -2.40763463e-08, 0.99998796)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2426.49365, 372.235657, -537.770325, 0.999891877, 7.73974129e-09, 0.0147061981, -7.54072538e-09, 1, -1.35882301e-08, -0.0147061981, 1.34758649e-08, 0.999891877)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2519.23633, 372.235657, -600.220947, 0.0387846716, 2.82807946e-08, -0.999247611, -1.7035763e-08, 1, 2.76408656e-08, 0.999247611, 1.59509028e-08, 0.0387846716)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2194.47485, 372.235657, -533.969971, -0.0198965427, -8.90041374e-09, 0.999802053, -2.676801e-08, 1, 8.36948022e-09, -0.999802053, -2.65961884e-08, -0.0198965427)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2120.90503, 372.235657, -494.024109, 0.0267464966, -1.91073717e-08, 0.999642253, 1.25112249e-08, 1, 1.8779458e-08, -0.999642253, 1.2004465e-08, 0.0267464966)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2176.09839, 372.235657, -565.846863, 0.994249225, 7.32487138e-08, 0.107091144, -6.65539019e-08, 1, -6.60890009e-08, -0.107091144, 5.85816053e-08, 0.994249225)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2272.59351, 372.235657, -424.183472, 0.0825703517, 2.32120279e-08, -0.99658525, 7.66701405e-08, 1, 2.96439353e-08, 0.99658525, -7.88560399e-08, 0.0825703517)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2234.90015, 372.235657, -338.384277, 0.99559027, 6.38064535e-08, -0.0938086808, -6.06150934e-08, 1, 3.68692916e-08, 0.0938086808, -3.10204875e-08, 0.99559027)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2021.12122, 372.235657, -245.737213, -0.29797703, 5.2269602e-08, -0.954573035, -4.92746288e-08, 1, 7.01384835e-08, 0.954573035, 6.79358862e-08, -0.29797703)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2047.91858, 372.235657, -388.797974, 0.00476136804, -2.37848781e-08, 0.999988675, 7.87922971e-08, 1, 2.34099851e-08, -0.999988675, 7.8679939e-08, 0.00476136804)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+	
+				local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local location = CFrame.new(2317.51367, 372.235657, -327.79187, -0.945492208, 3.78651102e-08, -0.325644761, 5.85270037e-08, 1, -5.3652677e-08, 0.325644761, -6.97871982e-08, -0.945492208)
+				local humanoid = game.Players.LocalPlayer.Character.Humanoid
+				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				wait(0.1)
+				pl.CFrame = location
+			end
+	
+		end
+	end)
+end
+coroutine.wrap(QRTOGS_fake_script)()
+local function XVBWPA_fake_script() -- BankCollect.LocalScript 
+	local script = Instance.new('LocalScript', BankCollect)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			script.Parent.Text = ("OFF")
+		end
+	
+		if toggle == true then
+			_G.bankboi = true --false to turn off and true to turn on
+			while _G.bankboi do
+				wait(0.500)
+				for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren())do
+					if string.find(v.Name,"Banknote") and v:IsA("Tool") then
+						game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+						v:Activate()
+					end
+				end
+			end
+		end
+		if toggle == false then 
+			_G.bankboi = false --false to turn off and true to turn on
+			while _G.bankboi do
+				wait(0.1)
+				for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren())do
+					if string.find(v.Name,"Banknote") and v:IsA("Tool") then
+						game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+						v:Activate()
+					end
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(XVBWPA_fake_script)()
+local function FJQJWVU_fake_script() -- BossNotify.LocalScript 
+	local script = Instance.new('LocalScript', BossNotify)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			script.Parent.Text = ("OFF")
+		end
+	
+		if toggle == true then
+			_G.BossNotify = true --false to turn off and true to turn on
+			while _G.BossNotify do
+				wait(1)
+				for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren())do
+	
+					local args = {
+						[1] = workspace:FindFirstChild("Zeppeli"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("DIO"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("Funny Valentine"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("ShadowDIO"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+				end
+			end
+	
+		end
+		if toggle == false then 
+			_G.BossNotify = false --false to turn off and true to turn on
+			while _G.BossNotify do
+				wait(1)
+				for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren())do
+	
+					local args = {
+						[1] = workspace:FindFirstChild("Dio Brando"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("DIO"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("Funny Valentine"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+					local args = {
+						[1] = workspace:FindFirstChild("ShadowDIO"),
+						[2] = 30
+					}
+	
+					game:GetService("ReplicatedStorage").DonutNew:FireServer(unpack(args))
+	
+				end
+			end
+	
+		end
+	end)
+end
+coroutine.wrap(FJQJWVU_fake_script)()
+local function UAQXIQH_fake_script() -- AutoTrash.LocalScript 
+	local script = Instance.new('LocalScript', AutoTrash)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			script.Parent.Text = ("OFF")
+		end
+	
+		if toggle == true then
+			_G.zeep = true
+			--not mine I just found it in my script files
+			local neep = {
+				"Arrow",
+				"Rokakaka Fruit",
+				"Water"
+				-- you can add the things that you want by doing this "ITEM",
+				-- you must add commas and you dont need to commas in the end
+			}
+	
+	
+			while wait() do
+				if _G.zeep then
+					for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+						if table.find(neep, v.Name) and v:IsA("Tool") then
+							v:Destroy()
+						end
+					end
+				end
+			end
+		end
+		if toggle == false then 
+			_G.zeep = false
+			--not mine I just found it in my script files
+			local neep = {
+				"Arrow",
+				"Rokakaka Fruit",
+				"Water"
+				-- you can add the things that you want by doing this "ITEM",
+				-- you must add commas and you dont need to commas in the end
+			}
+	
+	
+			while wait() do
+				if _G.zeep then
+					for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+						if table.find(neep, v.Name) and v:IsA("Tool") then
+							v:Destroy()
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(UAQXIQH_fake_script)()
+local function EINEBFN_fake_script() -- AntiAFK.LocalScript 
+	local script = Instance.new('LocalScript', AntiAFK)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+			script.Parent.Text = ("ON")
+		end
+	
+		if toggle == true then
+			repeat wait() until game:IsLoaded() 
+			game:GetService("Players").LocalPlayer.Idled:connect(function()
+				game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+			end)
+		end
+		if toggle == false then 
+			print("You cannot Turn OFF ANTI AFK KICK so ye")
+		end
+	end)
+end
+coroutine.wrap(EINEBFN_fake_script)()
+local function ZLTWSM_fake_script() -- Admin.LocalScript 
+	local script = Instance.new('LocalScript', Admin)
+
+	while true do
+		script.Parent.BorderColor3 = Color3.fromRGB (0, 255, 0)
+		wait(0.1)
+		script.Parent.BorderColor3 = Color3.fromRGB (255, 255, 0)
+		wait(0.1)
+		script.Parent.BorderColor3 = Color3.fromRGB (0, 170, 255)
+		wait(0.1)
+		script.Parent.BorderColor3 = Color3.fromRGB (255, 0, 0)
+		wait(0.1)
+		script.Parent.BorderColor3 = Color3.fromRGB (255, 0, 127)
+		wait(0.1)
+		script.Parent.BorderColor3 = Color3.fromRGB (85, 0, 127)
+		wait(0.1)
+		end
+end
+coroutine.wrap(ZLTWSM_fake_script)()
+local function UNMGXEV_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	while true do
+		script.Parent.BackgroundColor3 = Color3.fromRGB(157, 255, 198)
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(108, 255, 243 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(103, 169, 255 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(123, 97, 255 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(214, 90, 255 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(255, 87, 205 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(255, 80, 83 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(255, 138, 84 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(255, 235, 83 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(255, 235, 83 )
+		wait(0.1)
+		script.Parent.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+	end
+end
+coroutine.wrap(UNMGXEV_fake_script)()
